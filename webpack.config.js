@@ -22,10 +22,19 @@ var config = {
         {
             test: /\.scss$/,
             // no minificated
-            // loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
+            loader: ExtractTextPlugin.extract('style-loader', 'css-loader?-autoprefixer!autoprefixer-loader?browsers=Android >= 2.3!sass-loader?outputStyle=expanded')
             // monified css
-            loader: ExtractTextPlugin.extract('style-loader', 'css-loader?-url&sourceMap&minimize!sass-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true')
+            // loader: ExtractTextPlugin.extract('style-loader', 'css-loader?-url&sourceMap&minimize!sass-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true')
+        },
+        {
+            test: /\.(png|jpg)$/, loader: 'url-loader?limit=10'
         }
+
+        // {
+        //   test: /\.(jpg|png)$/,
+        //   // loaders: 'url-loader'
+        //   loaders: 'file-loader?name=[name].[ext]'
+        // }
     ]
   },
   entry: {
@@ -33,7 +42,7 @@ var config = {
   },
   output: {
     path: __dirname,
-    publicPath: '/styles/',
+    publicPath: __dirname,
     filename: './dist/index.js'
   },
   plugins: [
