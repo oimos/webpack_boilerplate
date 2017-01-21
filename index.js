@@ -1,4 +1,4 @@
-import './style.scss';//without this it would not generate style.css inside dist directory
+import './style.css';//without this it would not generate style.css inside dist directory
 
 import React from 'react';
 import ReactDOM from 'react-dom';
