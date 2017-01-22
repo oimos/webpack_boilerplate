@@ -11,7 +11,7 @@ $red: #bf0000;
 #box {
     will-change: transform;
     border: solid 5px $red;
-    width: 300px;
+    width: 330px;
     height: 300px;
     margin: auto;
     a {
